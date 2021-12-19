@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.getEmployees();
   }
   employees: Employee[] = [];
 
