@@ -22,15 +22,18 @@
         <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
         <mat-datepicker #birthDate></mat-datepicker>
       </mat-form-field>
-      <div>
-        <label for="employmentDate">Employment date: </label>
-        <input id="employmentDate" [(ngModel)]="employee.employmentDate" placeholder="employment date">
-      </div>
-      
-      <div>
-        <label for="terminationDate">Employment date: </label>
-        <input id="terminationDate" [(ngModel)]="employee.terminationDate" placeholder="termination date">
-      </div>
+      <mat-form-field>
+        <mat-label>Employment Date</mat-label>
+        <input matInput [matDatepicker]="employmentDate" [(ngModel)]="employee.employmentDate">
+        <mat-datepicker-toggle matSuffix [for]="employmentDate"></mat-datepicker-toggle>
+        <mat-datepicker #employmentDate></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Termination Date:</mat-label>
+        <input matInput [matDatepicker]="terminationDate" [(ngModel)]="employee.terminationDate">
+        <mat-datepicker-toggle matSuffix [for]="terminationDate"></mat-datepicker-toggle>
+        <mat-datepicker #terminationDate></mat-datepicker>
+      </mat-form-field>
 </div>
 <button (click)="goBack()">Back</button>
 <button (click)="save()">Save</button>

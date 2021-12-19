@@ -14,14 +14,19 @@
             <label for="employeeNum">Employee #: </label>
             <input id="employeeNum" name="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number">
           </div>
-          <div>
-            <label for="birthDate">Birth date: </label>
-            <input id="birthDate" name="birthDate" [(ngModel)]="employee.birthDate" placeholder="birth date">
-          </div>
-          <div>
-            <label for="employmentDate">Employment date: </label>
-            <input id="employmentDate" name="employmentDate" [(ngModel)]="employee.employmentDate" placeholder="employment date">
-          </div>
+         
+          <mat-form-field>
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="birthDate" [(ngModel)]="employee.birthDate">
+            <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+            <mat-datepicker #birthDate></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Employment Date</mat-label>
+            <input matInput [matDatepicker]="employmentDate" [(ngModel)]="employee.employmentDate">
+            <mat-datepicker-toggle matSuffix [for]="employmentDate"></mat-datepicker-toggle>
+            <mat-datepicker #employmentDate></mat-datepicker>
+          </mat-form-field>
          
           <button type="submit">Add new</button>
     </form>
