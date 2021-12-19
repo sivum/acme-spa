@@ -18,6 +18,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatListModule } from '@angular/material/list'
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -41,8 +43,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule
-    
+    MatSliderModule,
+    MatListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

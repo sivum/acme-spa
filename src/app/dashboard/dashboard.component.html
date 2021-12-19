@@ -1,8 +1,10 @@
 <h2>Top Employees</h2>
-<div class="heroes-menu">
-  <a *ngFor="let employee of employees"
-     routerLink="/detail/{{employee.employeeId}}"
-  >
-    {{employee.firstName}}
-  </a>
-</div>
+
+<mat-nav-list>
+  <mat-list-item *ngFor="let currentEmployee of employees">
+    <a routerLink="/detail/{{currentEmployee.employeeId}}">
+      {{currentEmployee.employeeId}} {{currentEmployee.firstName}} {{currentEmployee.lastName}}
+   </a>
+  
+  </mat-list-item>
+</mat-nav-list>

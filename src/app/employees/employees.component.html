@@ -1,18 +1,17 @@
 <h2>Acme Employees</h2>
 <div>
     <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
-       
-        <div>
+         <div>
             <label for="firstName">First name: </label>
-            <input id="firstName" name="firstName" [(ngModel)]="employee.firstName" placeholder="first name">
+            <input id="firstName" name="firstName" [(ngModel)]="employee.firstName"  required>
           </div>
           <div>
             <label for="lastName">Last name: </label>
-            <input id="lastName" name="lastName" [(ngModel)]="employee.lastName" placeholder="last name">
+            <input id="lastName" name="lastName" [(ngModel)]="employee.lastName" placeholder="last name" required>
           </div>
           <div>
             <label for="employeeNum">Employee #: </label>
-            <input id="employeeNum" name="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number">
+            <input id="employeeNum" name="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number" required>
           </div>
          
           <mat-form-field>
@@ -27,19 +26,21 @@
             <mat-datepicker-toggle matSuffix [for]="employmentDate"></mat-datepicker-toggle>
             <mat-datepicker #employmentDate></mat-datepicker>
           </mat-form-field>
-         
           <button type="submit">Add new</button>
     </form>
    
 </div>
-<ul class="employees">
-    <li *ngFor="let currentEmployee of employees">
-        <a routerLink="/detail/{{currentEmployee.employeeId}}">
-            <span class="badge">{{currentEmployee.employeeId}}</span>
-            {{currentEmployee.firstName}}
-        </a>
-        <button class="delete" title="Remove employee"
-         (click)="delete(currentEmployee)">x</button>
-    </li>
-</ul>
+<mat-divider></mat-divider>
+<mat-nav-list>
+  <mat-list-item *ngFor="let currentEmployee of employees">
+    <a routerLink="/detail/{{currentEmployee.employeeId}}">
+      {{currentEmployee.employeeId}} {{currentEmployee.firstName}} {{currentEmployee.lastName}}
+   </a>
+    <mat-action-list>
+      <button  mat-icon-button color="primary" aria-label="Remove employee" (click)="delete(currentEmployee)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-action-list>
+  </mat-list-item>
+</mat-nav-list>
 <br/>
