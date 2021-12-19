@@ -1,0 +1,40 @@
+<h2>Acme Employees</h2>
+<div>
+    <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+       
+        <div>
+            <label for="firstName">First name: </label>
+            <input id="firstName" name="firstName" [(ngModel)]="employee.firstName" placeholder="first name">
+          </div>
+          <div>
+            <label for="lastName">Last name: </label>
+            <input id="lastName" name="lastName" [(ngModel)]="employee.lastName" placeholder="last name">
+          </div>
+          <div>
+            <label for="employeeNum">Employee #: </label>
+            <input id="employeeNum" name="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number">
+          </div>
+          <div>
+            <label for="birthDate">Birth date: </label>
+            <input id="birthDate" name="birthDate" [(ngModel)]="employee.birthDate" placeholder="birth date">
+          </div>
+          <div>
+            <label for="employmentDate">Employment date: </label>
+            <input id="employmentDate" name="employmentDate" [(ngModel)]="employee.employmentDate" placeholder="employment date">
+          </div>
+         
+          <button type="submit">Add new</button>
+    </form>
+   
+</div>
+<ul class="employees">
+    <li *ngFor="let currentEmployee of employees">
+        <a routerLink="/detail/{{currentEmployee.employeeId}}">
+            <span class="badge">{{currentEmployee.employeeId}}</span>
+            {{currentEmployee.firstName}}
+        </a>
+        <button class="delete" title="Remove employee"
+         (click)="delete(currentEmployee)">x</button>
+    </li>
+</ul>
+<br/>

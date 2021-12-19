@@ -1,0 +1,33 @@
+<div *ngIf="employee">
+    <h2>Employee Details</h2>
+
+    <div><span>fullname : </span>{{employee.firstName}} {{employee.lastName}}</div>
+    <div>
+        <input id="employeeId" type="hidden" [(ngModel)]="employee.employeeId" placeholder="employeeId">
+        <label for="firstName">First name: </label>
+        <input id="firstName" [(ngModel)]="employee.firstName" placeholder="first name">
+      </div>
+      <div>
+        <label for="lastName">Last name: </label>
+        <input id="lastName" [(ngModel)]="employee.lastName" placeholder="last name">
+      </div>
+      <div>
+        <label for="employeeNum">Employee #: </label>
+        <input id="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number">
+      </div>
+      <div>
+        <label for="birthDate">Birth date: </label>
+        <input id="birthDate" [(ngModel)]="employee.birthDate" placeholder="birth date">
+      </div>
+      <div>
+        <label for="employmentDate">Employment date: </label>
+        <input id="employmentDate" [(ngModel)]="employee.employmentDate" placeholder="employment date">
+      </div>
+      <div>
+        <label for="terminationDate">Employment date: </label>
+        <input id="terminationDate" [(ngModel)]="employee.terminationDate" placeholder="termination date">
+      </div>
+</div>
+<button (click)="goBack()">Back</button>
+<button (click)="save()">Save</button>
+
