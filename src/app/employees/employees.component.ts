@@ -19,7 +19,7 @@ export class EmployeesComponent implements OnInit {
                 employeeNum:'',
                 firstName:'',
                 lastName:'',
-                employmentDate:new Date(),
+                employmentDate:new Date(2020,12,1),
                 birthDate:new Date(),
                 terminationDate:new Date(),
               }

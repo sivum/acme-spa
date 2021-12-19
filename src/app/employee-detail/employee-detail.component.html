@@ -15,14 +15,18 @@
         <label for="employeeNum">Employee #: </label>
         <input id="employeeNum" [(ngModel)]="employee.employeeNum" placeholder="employee number">
       </div>
-      <div>
-        <label for="birthDate">Birth date: </label>
-        <input id="birthDate" [(ngModel)]="employee.birthDate" placeholder="birth date">
-      </div>
+    
+      <mat-form-field>
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="birthDate" [(ngModel)]="employee.birthDate">
+        <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+        <mat-datepicker #birthDate></mat-datepicker>
+      </mat-form-field>
       <div>
         <label for="employmentDate">Employment date: </label>
         <input id="employmentDate" [(ngModel)]="employee.employmentDate" placeholder="employment date">
       </div>
+      
       <div>
         <label for="terminationDate">Employment date: </label>
         <input id="terminationDate" [(ngModel)]="employee.terminationDate" placeholder="termination date">

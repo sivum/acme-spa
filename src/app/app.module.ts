@@ -8,6 +8,16 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -21,7 +31,18 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
